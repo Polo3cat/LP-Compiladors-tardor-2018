@@ -493,7 +493,7 @@ bool evalExpression(AST* op)
       return evalExpression(op->down) and evalExpression(op->down->right);
     break;
     case OR:
-      return evalExpression(op->down) and evalExpression(op->down->right);
+      return evalExpression(op->down) or evalExpression(op->down->right);
     break;
     case NOT:
       return not evalExpression(op->down);
